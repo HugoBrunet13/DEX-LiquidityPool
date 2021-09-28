@@ -31,7 +31,7 @@ describe('Liquidity Pool Contract', () => {
             expect(await LiquidityPool.addressTokenA()).to.equal(TokenA.address) 
             expect(await LiquidityPool.addressTokenB()).to.equal(TokenB.address)
         })
-        it('New LP Token is created with a total supply of 0', async () => {
+        it('Liquidity Pool LP Tokens is created with a total supply of 0', async () => {
             expect(await LiquidityPool.totalSupply()).to.equal(0)
         })
     })

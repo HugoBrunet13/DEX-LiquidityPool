@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: UNLICENSED
+
 pragma solidity ^0.8.0;
 
 interface tokenRecipient { 
@@ -20,6 +22,12 @@ contract ERC20Token {
     
     // This generates a public event on the blockchain that will notify clients
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
+
+    // This notifies clients about the amount minted
+    event Mint(address indexed from, uint256 value);
+
+    // This notifies clients about the amount burnt
+    event Burn(address indexed from, uint256 value);
 
     /**
      * Constructor function
@@ -101,4 +109,33 @@ contract ERC20Token {
         emit Approval(msg.sender, _spender, _value);
         return true;
     }
+
+    /**
+     * Mint tokens.
+     * Create `_value` new tokens and credit them to a specified address
+     * @param _receiver the address of the receiver of the new minted token
+     * @param _value the amount of token to create
+     */
+    function _mint(address _receiver, uint256 _value) internal returns (bool success) {
+        balanceOf[_receiver] += _value;            // add new tokens to the balance of the receiver
+        totalSupply += _value;                     // Updates totalSupply
+        emit Mint(msg.sender, _value);
+        return true;
+    }
+
+    /**
+     * Burn tokens.
+     * Remove `_value` tokens from the system irreversibly
+     * @param _value the amount of money to burn
+     */
+    function burn(uint256 _value) public returns (bool success) {
+        require(balanceOf[msg.sender] >= _value);   // Check if the sender has enough
+        balanceOf[msg.sender] -= _value;            // Update balances of the sender
+        totalSupply -= _value;                      // Updates totalSupply
+        emit Burn(msg.sender, _value);
+        return true;
+    }
+
+
+
 }

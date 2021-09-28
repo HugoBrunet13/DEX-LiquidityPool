@@ -1,13 +1,14 @@
+// SPDX-License-Identifier: UNLICENSED
+
 pragma solidity ^0.8.0;
 import "hardhat/console.sol"; //For debugging only
 
 
 import "./ERC20Token.sol";
-import "./LPToken.sol";
 import "./librairies/Math.sol";
 
 
-contract LiquidityPool is LPToken {
+contract LiquidityPool is ERC20Token {
 
     // uint public constant MINIMUM_LIQUIDITY = 10**3;
 
@@ -34,7 +35,7 @@ contract LiquidityPool is LPToken {
         string memory _symbol,
         address _addressTokenA,
         address _addressTokenB
-    ) LPToken(_name, _symbol) {
+    ) ERC20Token(0, _name, _symbol) {
         addressTokenA = _addressTokenA;
         addressTokenB = _addressTokenB;
         dex = msg.sender;
