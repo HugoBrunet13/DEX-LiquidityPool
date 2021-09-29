@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const { ethers } = require('hardhat');
 
-describe('Liquidity Pool Contract', () => {
+describe('DEX Contract', () => {
 
     beforeEach(async () => {
 
