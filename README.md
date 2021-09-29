@@ -15,7 +15,7 @@ Smart contract are implemented with **Solidity** and require the **version 0.8.0
 Basic ERC20 Token contract used by Liquidity providers and trader to use interact with the Dex
 
 2. `DEX.sol`  
-Decentralized market place new liquidity pool can be created.  
+Decentralized market place where new liquidity pool can be created.  
 
 3. `LiquidityPool.sol`  
 Main file of the project. The liquidity pool contract represents a TokenA/TokenB liquidity pool.  
