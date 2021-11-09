@@ -1,4 +1,4 @@
-# DEX - Liquidity Pool (AMM)
+# DEX - Liquidity Pool (AMM) - INCOMPLETE
 
 Incomplete Automated Market Market Dex. 
 
