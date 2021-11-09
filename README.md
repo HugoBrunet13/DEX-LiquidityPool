@@ -12,7 +12,7 @@ Missing parts:
 ### 1. Smart contracts - `contract/` 
 Smart contract are implemented with **Solidity** and require the **version 0.8.0** of the compiler. 
 1. `ERC20Token.sol`   
-Basic ERC20 Token contract used by Liquidity providers and trader to use interact with the Dex
+Basic ERC20 Token contract used by Liquidity providers and trader to interact with the Dex
 
 2. `DEX.sol`  
 Decentralized market place where new liquidity pool can be created.  
